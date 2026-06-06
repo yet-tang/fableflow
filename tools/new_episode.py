@@ -26,11 +26,17 @@ def main() -> int:
         parser.error(f"目录已存在：{target}")
 
     shutil.copytree(ROOT / "templates" / "episode", target)
-    for name in ("images", "audio", "export"):
+    descriptions = {
+        "images": "gpt-image-2 角色、场景与镜头参考帧",
+        "video-clips": "通过 G4 的 Seedance 视频片段",
+        "audio": "旁白、环境音和临时混音",
+        "export": "剪映审片版与正式成片"
+    }
+    for name, description in descriptions.items():
         folder = target / name
         folder.mkdir(parents=True, exist_ok=True)
         (folder / "README.md").write_text(
-            f"# {name.title()}\n\n本目录用于该分集的 {name} 资产；大体积媒体默认不提交。\n",
+            f"# {name.title()}\n\n本目录用于存放{description}；大体积媒体默认不提交。\n",
             encoding="utf-8",
         )
 
@@ -39,6 +45,7 @@ def main() -> int:
     brief["episode_id"] = args.episode_id
     brief["slug"] = args.slug
     brief["concept_name"] = args.concept
+    brief["prompt_versions"]["seedance_video_package"] = "0.2.0"
     brief_path.write_text(json.dumps(brief, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(target.relative_to(ROOT))

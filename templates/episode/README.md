@@ -9,8 +9,10 @@
 - `decision.json`
 - `script.json`
 - `storyboard.json`
-- `asset-manifest.json`
+- `asset-manifest.json`：gpt-image-2 角色、场景和参考帧
+- `video-manifest.json`：Seedance 视频生成任务
 - `publish-pack.json`
 - `images/README.md`
+- `video-clips/README.md`
 - `audio/README.md`
 - `export/README.md`

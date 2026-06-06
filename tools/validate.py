@@ -19,6 +19,7 @@ SCHEMA_BY_FILENAME = {
     "script.json": "script.schema.json",
     "storyboard.json": "storyboard.schema.json",
     "asset-manifest.json": "asset-manifest.schema.json",
+    "video-manifest.json": "video-manifest.schema.json",
     "publish-pack.json": "publish-pack.schema.json",
 }
 
@@ -44,6 +45,7 @@ def validate_cross_file_rules(episode_dir: Path) -> list[str]:
     errors: list[str] = []
     storyboard_path = episode_dir / "storyboard.json"
     manifest_path = episode_dir / "asset-manifest.json"
+    video_manifest_path = episode_dir / "video-manifest.json"
     script_path = episode_dir / "script.json"
 
     if storyboard_path.exists():
@@ -80,6 +82,28 @@ def validate_cross_file_rules(episode_dir: Path) -> list[str]:
             errors.append(f"{manifest_path}: 未覆盖镜头 {', '.join(missing)}")
         if unknown:
             errors.append(f"{manifest_path}: 引用了不存在的镜头 {', '.join(unknown)}")
+
+    if storyboard_path.exists() and video_manifest_path.exists():
+        storyboard = load_json(storyboard_path)
+        video_manifest = load_json(video_manifest_path)
+        shot_ids = {s["shot_id"] for s in storyboard["shots"]}  # type: ignore[index]
+        covered = {sid for clip in video_manifest["clips"] for sid in clip["shot_ids"]}  # type: ignore[index]
+        missing = sorted(shot_ids - covered)
+        unknown = sorted(covered - shot_ids)
+        if missing:
+            errors.append(f"{video_manifest_path}: 未覆盖镜头 {', '.join(missing)}")
+        if unknown:
+            errors.append(f"{video_manifest_path}: 引用了不存在的镜头 {', '.join(unknown)}")
+
+        clip_ids: set[str] = set()
+        filenames: set[str] = set()
+        for clip in video_manifest["clips"]:  # type: ignore[index]
+            if clip["clip_id"] in clip_ids:
+                errors.append(f"{video_manifest_path}: 重复 clip_id {clip['clip_id']}")
+            clip_ids.add(clip["clip_id"])
+            if clip["filename"] in filenames and clip["mode"] not in {"reuse_clip", "edit_only"}:
+                errors.append(f"{video_manifest_path}: 重复输出文件名 {clip['filename']}")
+            filenames.add(clip["filename"])
 
     if script_path.exists():
         script = load_json(script_path)

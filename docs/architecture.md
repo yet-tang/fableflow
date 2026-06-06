@@ -2,90 +2,83 @@
 
 ## 1. 设计目标
 
-FableFlow 首版不是自动剪辑软件，而是一个**结构化内容生产协议**。它解决四个问题：
+FableFlow v0.2 是一个**结构化的寓言视频生产协议**。它不试图一次完成全自动电影生成，而是让不同模型各自承担最稳定的工作：
 
-1. GPT-5.5 的输出如何稳定交接给下一阶段。
-2. 故事如何保证概念机制准确，而不是只做表面类比。
-3. gpt-image-2 如何复用统一角色和风格，降低镜头漂移。
-4. 剪映制作如何由“凭感觉剪”变成有装配清单的标准流程。
+- GPT-5.5：知识机制、故事、脚本、故事板和生产任务设计。
+- gpt-image-2：角色身份、服装、场景和镜头参考帧。
+- Seedance：动作、运镜、光影变化和可选环境声。
+- 剪映：精确旁白、字幕、节奏、字卡、混音和最终导出。
 
 ## 2. 分层
 
-### 2.1 知识层
+### 知识层
 
-- `episode-brief.json`：为什么做这一期。
-- `concept-sheet.json`：概念的机制、边界、误解和现实案例。
+`episode-brief.json` 和 `concept-sheet.json` 保证“讲得对”。
 
-知识层不写故事，负责保证“讲得对”。
+### 叙事层
 
-### 2.2 叙事层
+`story-options.json`、`decision.json` 和 `script.json` 保证“愿意看”。
 
-- `story-options.json`：三个不同寓言方向。
-- `decision.json`：人工选择及修改意见。
-- `script.json`：最终旁白结构。
+### 导演层
 
-叙事层负责“愿意看”，但不得破坏知识层约束。
+`storyboard.json` 将完整故事拆成 10–15 个单一意图镜头，明确时间、动作、画面、旁白和声音功能。
 
-### 2.3 视觉层
+### 身份锚点层
 
-- `storyboard.json`：逐镜头时间、内容、情绪和画面要求。
-- `asset-manifest.json`：需要生成、复用或仅用字卡完成的资产。
-- `bibles/`：角色和画风的长期基准。
+`asset-manifest.json` 定义 gpt-image-2 需要生成的角色锚点、场景锚点和镜头参考帧。该层只解决“是谁、在哪里、长什么样”，不承担复杂运动。
 
-视觉层负责“画得出、接得上、角色不漂”。
+### 视频生成层
 
-### 2.4 成片层
+`video-manifest.json` 把故事板转成 Seedance 任务，明确：
 
-- `publish-pack.json`：标题、封面、旁白、互动和标识文案。
-- `subtitles.srt`：字幕导入。
-- `edit-list.csv`：剪映逐镜头装配清单。
+- 生成模式。
+- 参考资产。
+- 唯一主要动作。
+- 唯一主要运镜。
+- 时间线时长与建议生成时长。
+- 原生音频策略。
+- 连续性约束、审核条件和降级方案。
 
-成片层负责“剪得快、发得稳”。
+### 成片层
 
-### 2.5 数据层
+`publish-pack.json`、`subtitles.srt` 和 `edit-list.csv` 负责剪映装配。旁白始终独立于 Seedance 视频片段。
 
-- `analytics/episode-metrics.csv`：记录内容变量与平台表现。
+### 数据层
 
-数据层不只记录播放量，更关注：前 3 秒留存、完播率、转发率、收藏率和评论猜中率。
+除平台指标外，还记录 Seedance 首次通过率、重生成次数、静帧降级数量、成本和生产时间。
 
 ## 3. 状态机
 
 ```mermaid
 stateDiagram-v2
     [*] --> Brief
-    Brief --> ConceptReady: G1通过
-    ConceptReady --> OptionsReady
-    OptionsReady --> DirectionSelected: G2通过
+    Brief --> ConceptReady: G1
+    ConceptReady --> DirectionSelected: G2
     DirectionSelected --> ScriptReady
     ScriptReady --> StoryboardReady
-    StoryboardReady --> AssetsReady: G3通过
-    AssetsReady --> EditReady
-    EditReady --> Published: G4通过
+    StoryboardReady --> AnchorsReady: G3
+    AnchorsReady --> ClipsReady: G4
+    ClipsReady --> EditReady
+    EditReady --> Published: G5
     Published --> Measured
     Measured --> [*]
 ```
 
-任一 Gate 未通过时只回退到最近的可修复阶段，避免整期重做。
-
 ## 4. 自动化边界
 
-### 当前自动化
+### v0.2 自动化
 
-- 创建标准分集目录。
-- JSON Schema 校验。
-- 从故事板生成 SRT。
-- 从故事板和资产清单生成剪辑 CSV。
+- 创建分集目录。
+- JSON Schema 与跨文件覆盖校验。
+- 生成 SRT。
+- 生成包含 Seedance 片段、参考图和音频策略的剪映装配 CSV。
 
-### 当前人工触发
+### v0.2 人工触发
 
-- GPT-5.5 对话或 API 调用。
-- gpt-image-2 出图与筛选。
-- 剪映导入、微动、配音、音乐和成片。
+- GPT-5.5 和 gpt-image-2 生成。
+- Seedance 逐镜生成、候选选择与返工。
+- 剪映总装与发布。
 
-### 后续可自动化
+### 后续 API 化
 
-- OpenAI API 编排。
-- Prompt 版本与结果追踪。
-- 图片生成任务队列。
-- 自动生成低清审片视频。
-- 平台数据抓取和选题推荐。
+只有在至少 10 期验证后，再实现 Seedance provider adapter、任务轮询、素材下载、失败重试、成本统计和授权元数据。
