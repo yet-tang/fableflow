@@ -13,12 +13,16 @@ venv/
 **/images/*.webp
 **/audio/*.wav
 **/audio/*.mp3
+**/video-clips/*.mp4
+**/video-clips/*.mov
+**/video-clips/*.webm
 **/export/*.mp4
 **/export/*.mov
 
 # Keep folder instructions
 !**/images/README.md
 !**/audio/README.md
+!**/video-clips/README.md
 !**/export/README.md
 
 # Generated helper files
