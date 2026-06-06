@@ -1,0 +1,96 @@
+{
+  "version": "0.1.0",
+  "models": {
+    "story": "gpt-5.5",
+    "image": "gpt-image-2",
+    "editor": "Jianying"
+  },
+  "stages": [
+    {
+      "id": "S01",
+      "name": "episode_brief",
+      "owner": "human",
+      "inputs": ["concept_library"],
+      "outputs": ["episode-brief.json"],
+      "gate": "G1"
+    },
+    {
+      "id": "S02",
+      "name": "concept_analysis",
+      "owner": "gpt-5.5",
+      "prompt": "prompts/01-concept-analysis.md",
+      "inputs": ["episode-brief.json"],
+      "outputs": ["concept-sheet.json"]
+    },
+    {
+      "id": "S03",
+      "name": "story_directions",
+      "owner": "gpt-5.5",
+      "prompt": "prompts/02-story-directions.md",
+      "inputs": ["episode-brief.json", "concept-sheet.json", "bibles/*"],
+      "outputs": ["story-options.json"],
+      "gate": "G2"
+    },
+    {
+      "id": "S04",
+      "name": "story_selection",
+      "owner": "human",
+      "inputs": ["story-options.json"],
+      "outputs": ["decision.json"]
+    },
+    {
+      "id": "S05",
+      "name": "script",
+      "owner": "gpt-5.5",
+      "prompt": "prompts/03-script.md",
+      "inputs": ["episode-brief.json", "concept-sheet.json", "story-options.json", "decision.json"],
+      "outputs": ["script.json"]
+    },
+    {
+      "id": "S06",
+      "name": "storyboard",
+      "owner": "gpt-5.5",
+      "prompt": "prompts/04-storyboard.md",
+      "inputs": ["script.json", "bibles/*"],
+      "outputs": ["storyboard.json"]
+    },
+    {
+      "id": "S07",
+      "name": "image_package",
+      "owner": "gpt-5.5+gpt-image-2",
+      "prompt": "prompts/05-image-package.md",
+      "inputs": ["storyboard.json", "bibles/*"],
+      "outputs": ["asset-manifest.json", "images/*"],
+      "gate": "G3"
+    },
+    {
+      "id": "S08",
+      "name": "publish_package",
+      "owner": "gpt-5.5",
+      "prompt": "prompts/06-publish-package.md",
+      "inputs": ["script.json", "storyboard.json"],
+      "outputs": ["publish-pack.json", "subtitles.srt", "edit-list.csv"]
+    },
+    {
+      "id": "S09",
+      "name": "jianying_edit",
+      "owner": "human",
+      "inputs": ["images/*", "audio/*", "subtitles.srt", "edit-list.csv"],
+      "outputs": ["export/final.mp4"],
+      "gate": "G4"
+    },
+    {
+      "id": "S10",
+      "name": "analytics_feedback",
+      "owner": "human",
+      "inputs": ["platform_metrics"],
+      "outputs": ["analytics/episode-metrics.csv"]
+    }
+  ],
+  "gates": {
+    "G1": "选题价值与寓言化可行性审核",
+    "G2": "故事方向与概念隐喻准确性审核",
+    "G3": "角色、画风与镜头可用性审核",
+    "G4": "成片节奏、知识准确性与发布合规审核"
+  }
+}

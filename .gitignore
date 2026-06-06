@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Generated media
+**/images/*.png
+**/images/*.jpg
+**/images/*.jpeg
+**/images/*.webp
+**/audio/*.wav
+**/audio/*.mp3
+**/export/*.mp4
+**/export/*.mov
+
+# Keep folder instructions
+!**/images/README.md
+!**/audio/README.md
+!**/export/README.md
+
+# Generated helper files
+**/subtitles.srt
+**/edit-list.csv
