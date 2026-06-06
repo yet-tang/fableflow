@@ -1,0 +1,95 @@
+{
+  "episode_id": "EP001",
+  "global_style_anchor": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。",
+  "global_negative_constraints": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+  "assets": [
+    {
+      "asset_id": "A01", "filename": "images/A01-dry-well-hook.png", "strategy": "generate", "shot_ids": ["S01"], "priority": "high",
+      "references": ["character:阿远", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。结果前置镜头。干裂井底居中，阿远提着空桶站在前景，少量村民围井，阴沉清晨。井口与人物均在竖屏中部安全区，顶部留标题空间。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "若角色或井台漂移，只重生成阿远外观、井口结构和围观人数，保持干井构图。", "status": "planned"
+    },
+    {
+      "asset_id": "A02", "filename": "images/A02-normal-well.png", "strategy": "generate", "shot_ids": ["S02", "S03"], "priority": "high",
+      "references": ["character:阿远", "character:岚婆婆", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。几天前的雾谷公共井，晨光温暖，井水充足，村民每人只取一桶。先生成可作为环境主锚点的稳定井台全景，阿远米色上衣深棕裤，岚婆婆灰紫披肩。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "优先修复井台地理、角色服装和暖晨光，不增加装饰或新角色。", "status": "planned"
+    },
+    {
+      "asset_id": "A03", "filename": "images/A03-extra-bucket.png", "strategy": "generate", "shot_ids": ["S04"], "priority": "high",
+      "references": ["character:阿远", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。井边中景，邻居提着两只木桶离开，阿远拿一只桶注视第二只桶。通过视线和桶的位置表现比较，不出现文字。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "若意图不清，强化阿远视线方向和第二只桶的位置，不改变场景。", "status": "planned"
+    },
+    {
+      "asset_id": "A04", "filename": "images/A04-decision.png", "strategy": "generate", "shot_ids": ["S05"], "priority": "medium",
+      "references": ["character:阿远"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。阿远在井边握住桶柄，身旁放第二只空桶，回头望向家的方向，表情是担心家中老人而非贪婪。人物偏左，右上留字幕。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "只修复表情、桶数量和服装一致性，禁止把阿远画成奸诈表情。", "status": "planned"
+    },
+    {
+      "asset_id": "A05", "filename": "images/A05-crowd-buckets.png", "strategy": "generate", "shot_ids": ["S06", "S07"], "priority": "high",
+      "references": ["character:阿远", "character:岚婆婆", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。第三天井边队伍变长，村民带大小不一的多个木桶，彼此观察并往前挪桶。薄雾变重，阿远仍有两只桶，岚婆婆担忧看井。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "控制群像数量，修复重复脸、重复肢体和桶穿插，保持阿远可识别。", "status": "planned"
+    },
+    {
+      "asset_id": "A06", "filename": "images/A06-low-water.png", "strategy": "generate", "shot_ids": ["S08"], "priority": "high",
+      "references": ["environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。从井口俯视内部，水面明显下降，石壁露出新的干燥水痕，多只木桶依次接近水面。画面清楚表现恢复速度追不上取水。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "如空间错误，只保留石井、水面和木桶，减少人物，确保水位低但尚未完全干涸。", "status": "planned"
+    },
+    {
+      "asset_id": "A07", "filename": "images/A07-before-empty.png", "strategy": "generate", "shot_ids": ["S09"], "priority": "medium",
+      "references": ["character:阿远", "character:岚婆婆", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。黎明前的长队绕过井台，每人带多个桶，灯光微弱，所有人沉默等待。井口是视觉中心，情绪接近临界点。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "画面无可读文字和水印", "镜头时间、天气和水位连续"],
+      "regeneration_instruction": "修复人物重复和桶数量，保持天未亮的冷色但不要恐怖风。", "status": "planned"
+    },
+    {
+      "asset_id": "A08", "filename": "images/A01-dry-well-hook.png", "strategy": "reuse", "shot_ids": ["S10"], "priority": "high",
+      "references": ["asset:A01"],
+      "generation_prompt": "复用 A01，通过剪映裁切到干裂井底与阿远表情，增加空桶落下后的静止。",
+      "negative_prompt": "不要新增图内文字或改变角色外观。",
+      "review_checks": ["裁切后主体清晰", "问题字幕安全区可用", "与 S01 干井状态连续"],
+      "regeneration_instruction": "无需重新生成；若 A01 无法裁切，再生成同场景近景。", "status": "not_applicable"
+    },
+    {
+      "asset_id": "A09", "filename": "edit/title-card-reveal", "strategy": "title_card", "shot_ids": ["S11"], "priority": "high",
+      "references": [],
+      "generation_prompt": "剪映内使用统一概念揭晓字卡，不调用图像模型，不在底图中生成文字。",
+      "negative_prompt": "不调用图像模型，不生成含文字图片。",
+      "review_checks": ["字卡位于中部安全区", "概念名称首次出现", "背景不过亮"],
+      "regeneration_instruction": "不适用。", "status": "not_applicable"
+    },
+    {
+      "asset_id": "A10", "filename": "images/A10-private-benefit-shared-cost.png", "strategy": "generate", "shot_ids": ["S12"], "priority": "high",
+      "references": ["character:阿远", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。同一竖屏画面形成自然视觉对照：左侧阿远家中多一桶水，右侧全村面对下降的公共井。不要画箭头和标签，通过构图表达私人收益与共同成本。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "不使用图内标签", "对照关系清晰但不海报化"],
+      "regeneration_instruction": "若对照过于海报化，改为连续空间横向构图，保持绘本叙事。", "status": "planned"
+    },
+    {
+      "asset_id": "A11", "filename": "images/A11-water-rule.png", "strategy": "generate", "shot_ids": ["S13"], "priority": "medium",
+      "references": ["character:阿远", "character:岚婆婆", "character:乌鸦墨点", "environment:雾谷公共井"],
+      "generation_prompt": "温暖克制的手绘寓言绘本，成熟寓言气质，轻微电影构图，柔和自然光，细腻但不过度精致的笔触，角色表情清晰，统一雾谷环境设计，9:16 竖屏。次日晨光，岚婆婆在井边放下用于记录每日水位的无文字木牌，阿远与村民围成半圆观察，乌鸦墨点停在井沿。表现开始协商规则，不表现问题已经彻底解决。",
+      "negative_prompt": "不要照片写实，不要3D，不要日漫或Q版，不要现代物品，不要图内文字和水印，不要多余手指或重复人物，不要改变固定服装，不要夸张奇幻装饰。",
+      "review_checks": ["9:16 构图和字幕安全区可用", "固定角色外观与服装一致", "乌鸦左脚铜环存在", "木牌无文字", "希望感克制"],
+      "regeneration_instruction": "修复人物站位、乌鸦铜环和无文字木牌，保持克制希望感。", "status": "planned"
+    }
+  ]
+}

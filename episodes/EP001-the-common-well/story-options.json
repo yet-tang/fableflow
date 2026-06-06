@@ -1,0 +1,106 @@
+{
+  "episode_id": "EP001",
+  "options": [
+    {
+      "option_id": "O1",
+      "working_title": "多打一桶水",
+      "hook": "雾谷有一口据说永远不会干的井，可村民们最后却守着空井渴了一整天。",
+      "setting": "雾谷村中央的公共水井",
+      "protagonist_goal": "阿远想为家人多存一点水，以免第二天排不到。",
+      "world_rule": "所有人可以自由取水，但井水每天只能缓慢恢复到固定水位。",
+      "beats": [
+        "井水长期够用，村民按需取水",
+        "阿远看到邻居多带一桶，决定也多存一桶",
+        "更多人担心吃亏，开始带来更大的容器",
+        "夜里水位未能恢复，第二天队伍更早更长",
+        "每个人都认为自己少拿也改变不了别人",
+        "井底露出，所有储水很快用完，村庄共同缺水"
+      ],
+      "guess_clues": [
+        "每个人多拿一桶都不显得严重",
+        "真正的变化来自所有人的行为叠加"
+      ],
+      "metaphor_map": [
+        {"story_element": "公共水井", "concept_element": "有限共享资源"},
+        {"story_element": "每户多打一桶", "concept_element": "个人独享额外收益"},
+        {"story_element": "水位由全村共同承受", "concept_element": "资源损耗成本被分散"},
+        {"story_element": "井水恢复速度", "concept_element": "资源承载与再生上限"}
+      ],
+      "misinterpretation_risks": [
+        {"risk": "观众认为问题只是村民贪婪", "mitigation": "让阿远的动机是防止家人缺水，并强调他看到别人行动后的理性反应"}
+      ],
+      "visual_plan": {
+        "estimated_shots": 13,
+        "difficulty": "low",
+        "new_assets": ["公共水井全景", "水位下降剖面感镜头", "村民拿大桶排队群像"]
+      },
+      "scores": {"mechanism": 5, "story": 5, "hook": 5, "delayed_reveal": 5, "visual": 5, "transfer": 5},
+      "total_score": 30
+    },
+    {
+      "option_id": "O2",
+      "working_title": "越来越肥的羊群",
+      "hook": "牧场上的羊一天比一天多，村民们却越来越接近失去所有羊。",
+      "setting": "雾谷外的公共草场",
+      "protagonist_goal": "阿远想多养一只羊，提高家庭收入。",
+      "world_rule": "所有村民都能免费放牧，但草场每季恢复量有限。",
+      "beats": [
+        "草场丰茂，羊群规模稳定",
+        "阿远增加一只羊并获得更多羊毛",
+        "邻居发现收益后也扩大羊群",
+        "草越来越短，大家担心来年更差而继续增加羊只",
+        "草场裸露，羊群开始消瘦",
+        "所有人被迫低价卖羊，长期生计受损"
+      ],
+      "guess_clues": ["增加一只羊对单户有利", "草场损失由所有羊群共同承担"],
+      "metaphor_map": [
+        {"story_element": "公共草场", "concept_element": "有限共享资源"},
+        {"story_element": "新增羊只", "concept_element": "边际私人收益"},
+        {"story_element": "草场退化", "concept_element": "分散的公共成本"}
+      ],
+      "misinterpretation_risks": [
+        {"risk": "故事过于接近经典教科书案例，观众可能提前猜中", "mitigation": "用家庭收入压力和提前卖羊的转折增强叙事，但仍可能泄题较早"}
+      ],
+      "visual_plan": {
+        "estimated_shots": 12,
+        "difficulty": "medium",
+        "new_assets": ["不同规模羊群", "草场季节退化连续画面"]
+      },
+      "scores": {"mechanism": 5, "story": 4, "hook": 4, "delayed_reveal": 3, "visual": 4, "transfer": 5},
+      "total_score": 25
+    },
+    {
+      "option_id": "O3",
+      "working_title": "不会熄灭的路灯",
+      "hook": "城堡承诺让每个人都能借走一盏灯，最后整座雾谷反而陷入黑暗。",
+      "setting": "雾谷城门的公共灯库",
+      "protagonist_goal": "白禾想多借一盏灯照亮自己的仓库。",
+      "world_rule": "灯油由公共油池补给，借灯不收费，归还时间也无人检查。",
+      "beats": [
+        "灯库原本足够夜间通行",
+        "白禾多借一盏用于私人仓库",
+        "其他人看到后也把灯带回家",
+        "公共油池消耗加快，守门人无法及时补充",
+        "夜路变暗，大家更想提前占有灯具",
+        "暴雨夜油池见底，救援道路失去照明"
+      ],
+      "guess_clues": ["借灯者各自获得完整照明", "油池消耗对单个人不明显"],
+      "metaphor_map": [
+        {"story_element": "公共油池", "concept_element": "共享资源"},
+        {"story_element": "免费借灯", "concept_element": "开放使用权"},
+        {"story_element": "私人照明收益", "concept_element": "私人收益集中"},
+        {"story_element": "道路黑暗", "concept_element": "公共成本累积"}
+      ],
+      "misinterpretation_risks": [
+        {"risk": "灯具和灯油两种资源可能让映射变复杂", "mitigation": "明确真正有限的是公共油池，灯只是使用通道"}
+      ],
+      "visual_plan": {
+        "estimated_shots": 14,
+        "difficulty": "high",
+        "new_assets": ["公共灯库", "夜间灯光群像", "暴雨救援场景"]
+      },
+      "scores": {"mechanism": 4, "story": 5, "hook": 5, "delayed_reveal": 5, "visual": 4, "transfer": 4},
+      "total_score": 27
+    }
+  ]
+}

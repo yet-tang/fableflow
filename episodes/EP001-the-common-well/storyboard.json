@@ -1,0 +1,123 @@
+{
+  "episode_id": "EP001",
+  "aspect_ratio": "9:16",
+  "total_duration_sec": 100,
+  "shots": [
+    {
+      "shot_id": "S01", "start_sec": 0, "end_sec": 5, "duration_sec": 5, "section_role": "hook", "shot_size": "wide",
+      "composition": "竖屏中央是一口露出干裂井底的石井，村民围在四周，阿远的空桶在前景。",
+      "characters": ["阿远", "村民群像"], "visible_action": "阿远提起空桶，村民低头看向井底。",
+      "environment": "阴沉清晨的雾谷村中央。", "emotion": "意外、困惑。",
+      "voiceover": "雾谷有一口从没见过井底的水井。可有一天，全村人却守着它渴了一整天。",
+      "subtitle": "从未干过的井，突然空了", "camera_motion": "从井口缓慢拉远，揭示围观人群。",
+      "transition": "黑场快速淡入。", "sound": "木桶撞击石壁的空响。",
+      "safe_area": "顶部留标题区，底部 15% 不放关键物体。", "continuity": "结果前置；后续回到几天前。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S02", "start_sec": 5, "end_sec": 12, "duration_sec": 7, "section_role": "setup", "shot_size": "extreme_wide",
+      "composition": "晨光中的雾谷村，水井位于村路交汇处，少量村民有序取水。",
+      "characters": ["阿远", "村民群像"], "visible_action": "村民提着普通木桶离开，队伍很短。",
+      "environment": "温暖晨光，村庄状态平静。", "emotion": "秩序、安稳。",
+      "voiceover": "井在村子中央，谁都可以取水。", "subtitle": "谁都可以来取水",
+      "camera_motion": "轻微向井口推近。", "transition": "由阴冷画面切到暖晨光。", "sound": "轻水声、鸟鸣。",
+      "safe_area": "人物集中中下部，顶部留字幕。", "continuity": "时间回到井水充足时。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S03", "start_sec": 12, "end_sec": 22, "duration_sec": 10, "section_role": "setup", "shot_size": "medium_wide",
+      "composition": "井边近一些，村民各自只装一桶，井内水面可见。",
+      "characters": ["阿远", "岚婆婆", "村民群像"], "visible_action": "岚婆婆转动辘轳，阿远接过一桶水后离开。",
+      "environment": "公共井台，石壁潮湿。", "emotion": "习以为常。",
+      "voiceover": "过去，大家只装当天够喝的量。夜里，地下水慢慢补回来，第二天又刚好够用。",
+      "subtitle": "取多少，用多少", "camera_motion": "横向缓慢移动，最后停在稳定水面。",
+      "transition": "自然切。", "sound": "辘轳木轴声、稳定水声。", "safe_area": "字幕放顶部，井口不被遮挡。",
+      "continuity": "阿远服装和 S02 一致。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S04", "start_sec": 22, "end_sec": 29, "duration_sec": 7, "section_role": "setup", "shot_size": "medium",
+      "composition": "邻居一手一桶离开井边，阿远在队伍中注视多出的桶。",
+      "characters": ["阿远", "村民群像"], "visible_action": "阿远的视线从邻居第二只桶移到自己手中的单桶。",
+      "environment": "同一井台，次日清晨。", "emotion": "迟疑、比较。",
+      "voiceover": "一个清晨，阿远发现邻居多带了一只桶。", "subtitle": "有人多带了一只桶",
+      "camera_motion": "从第二只桶轻推到阿远表情。", "transition": "动作匹配切。", "sound": "桶底轻碰石板。",
+      "safe_area": "阿远脸部在画面中部。", "continuity": "光线略冷，暗示变化开始。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S05", "start_sec": 29, "end_sec": 36, "duration_sec": 7, "section_role": "setup", "shot_size": "medium_close",
+      "composition": "阿远握住桶柄，回头望向家的方向，旁边放着第二只空桶。",
+      "characters": ["阿远"], "visible_action": "他短暂停顿后，把第二只桶拖到井边。",
+      "environment": "井边石板路，背景虚化可见家中老人剪影。", "emotion": "担心、做出决定。",
+      "voiceover": "他想到家里还有老人，万一明天来晚了呢？于是，他也多打了一桶。", "subtitle": "只是为了明天安心",
+      "camera_motion": "轻微推近。", "transition": "柔和叠化。", "sound": "低声呼吸、桶柄摩擦。",
+      "safe_area": "右上留字幕，人物偏左。", "continuity": "第二只桶成为后续重复视觉符号。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S06", "start_sec": 36, "end_sec": 44, "duration_sec": 8, "section_role": "escalation", "shot_size": "wide",
+      "composition": "井边队伍明显变长，村民带来大小不一的多个容器。",
+      "characters": ["阿远", "村民群像", "岚婆婆"], "visible_action": "众人把更多桶排在脚边，岚婆婆看向井内。",
+      "environment": "第三天清晨，薄雾更重。", "emotion": "焦虑扩散。",
+      "voiceover": "第二天，更多人带来了大桶。", "subtitle": "更多人，带来更大的桶",
+      "camera_motion": "从队尾横移到井口。", "transition": "快速横切。", "sound": "脚步、桶碰撞声增多。",
+      "safe_area": "人物不超过画面顶部 75%。", "continuity": "保持井台布局不变。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S07", "start_sec": 44, "end_sec": 52, "duration_sec": 8, "section_role": "escalation", "shot_size": "medium_wide",
+      "composition": "几个村民护着自己的桶，彼此观察，阿远处在人群中央。",
+      "characters": ["阿远", "村民群像"], "visible_action": "一名村民把空桶往前挪，其他人随即跟进。",
+      "environment": "拥挤井台。", "emotion": "猜疑、从众。",
+      "voiceover": "有人说，自己不多拿，水也会被别人拿走。", "subtitle": "不多拿，就会被别人拿走",
+      "camera_motion": "轻微手持感横移，但保持绘本稳定。", "transition": "连续动作切。", "sound": "人群低语。",
+      "safe_area": "字幕置顶部，不遮人物手部和桶。", "continuity": "阿远第二只桶仍在脚边。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S08", "start_sec": 52, "end_sec": 60, "duration_sec": 8, "section_role": "escalation", "shot_size": "insert",
+      "composition": "从井口俯视，水面明显降低，多只木桶轮流落下。", "characters": [],
+      "visible_action": "水面被连续提起的桶搅动，石壁露出新的干燥水痕。", "environment": "井内视角。", "emotion": "资源快速下降。",
+      "voiceover": "井水越来越浅，排队却越来越早。每个人只多拿一点，谁都觉得问题不在自己。",
+      "subtitle": "每个人，都只多拿一点", "camera_motion": "缓慢向下推近水面。", "transition": "由人群切到井内。",
+      "sound": "水声变空，辘轳加快。", "safe_area": "字幕放顶部石壁区域。", "continuity": "水位比 S03 明显下降。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S09", "start_sec": 60, "end_sec": 68, "duration_sec": 8, "section_role": "guess", "shot_size": "wide",
+      "composition": "黎明前，队伍已经绕过井台，人人带着多个桶，井边灯光微弱。",
+      "characters": ["阿远", "村民群像", "岚婆婆"], "visible_action": "所有人沉默等待，阿远看见前后相同的大桶。",
+      "environment": "第四天清晨，天未亮。", "emotion": "不安到临界点。", "voiceover": "直到一个清晨，木桶落下去——",
+      "subtitle": "直到那个清晨……", "camera_motion": "极慢推近井口。", "transition": "节奏突然放慢。",
+      "sound": "背景音乐收窄，只留辘轳声。", "safe_area": "中心井口保持无遮挡。", "continuity": "时间和水位延续 S08。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S10", "start_sec": 68, "end_sec": 74, "duration_sec": 6, "section_role": "guess", "shot_size": "close",
+      "composition": "空桶撞在干裂井底，随后切到阿远和村民的脸。", "characters": ["阿远", "村民群像"],
+      "visible_action": "阿远握着绳索不动，乌鸦墨点停在井沿。", "environment": "干涸井口。", "emotion": "震惊、停顿。",
+      "voiceover": "只传来撞击井底的空响。你觉得，究竟是谁弄干了这口井？", "subtitle": "究竟是谁弄干了井？",
+      "camera_motion": "桶落下后静止 0.8 秒。", "transition": "硬切并留停顿。", "sound": "清晰空响，随后短暂静音。",
+      "safe_area": "问题字幕置上方，人物眼神不被遮挡。", "continuity": "复用 S01 干井状态，但景别更近。", "asset_strategy": "reuse"
+    },
+    {
+      "shot_id": "S11", "start_sec": 74, "end_sec": 84, "duration_sec": 10, "section_role": "reveal", "shot_size": "title_card",
+      "composition": "以干井暗化画面为底，中央出现统一概念揭晓字卡。", "characters": [], "visible_action": "概念名称分两拍出现。",
+      "environment": "剪映字卡层。", "emotion": "答案落地。", "voiceover": "没有一个人单独毁掉它。这个故事讲的，是公地悲剧。",
+      "subtitle": "公地悲剧", "camera_motion": "背景极慢推近，字卡保持稳定。", "transition": "低频揭晓音效同步字卡。",
+      "sound": "短促、克制的揭晓音。", "safe_area": "文字位于中部 50% 安全区。", "continuity": "不生成图内文字。", "asset_strategy": "title_card"
+    },
+    {
+      "shot_id": "S12", "start_sec": 84, "end_sec": 95, "duration_sec": 11, "section_role": "explanation", "shot_size": "medium_wide",
+      "composition": "画面分层展示一户获得额外水桶，而井水下降由所有村民共同面对；不使用图内标签。",
+      "characters": ["阿远", "村民群像"], "visible_action": "阿远家中多一桶水，另一侧全村看向下降的井水。",
+      "environment": "同一村庄的视觉对照。", "emotion": "理解因果。",
+      "voiceover": "水井是共享资源。多打一桶的好处归自己，水位下降的代价却由全村分担。当每个人都做同样合理的选择，资源就会被共同耗尽。",
+      "subtitle": "好处归自己，代价由所有人承担", "camera_motion": "从阿远的桶缓慢横移到全村和井。",
+      "transition": "从字卡回到明晰中性色画面。", "sound": "音乐恢复但保持克制。", "safe_area": "对照主体置左右，中间上方留字幕。",
+      "continuity": "角色服装和井台保持一致。", "asset_strategy": "generate"
+    },
+    {
+      "shot_id": "S13", "start_sec": 95, "end_sec": 100, "duration_sec": 5, "section_role": "ending", "shot_size": "medium",
+      "composition": "岚婆婆在井边放下一块用于记录每日水位的木牌，阿远和村民围成半圆观察。",
+      "characters": ["阿远", "岚婆婆", "村民群像", "乌鸦墨点"], "visible_action": "众人不再抢桶，而是看向共同的水位规则。",
+      "environment": "次日晨光，井仍低水位但出现修复希望。", "emotion": "克制、可改变。",
+      "voiceover": "所以下次看到人人都想多拿一点时，别只问谁自私，也要问规则把代价留给了谁。",
+      "subtitle": "规则把代价留给了谁？", "camera_motion": "缓慢拉远，以村庄和井收束。", "transition": "淡出至栏目尾卡。",
+      "sound": "水滴声与轻微收束音。", "safe_area": "底部避开平台按钮，字幕放中上部。",
+      "continuity": "不表现问题已彻底解决，只暗示开始治理。", "asset_strategy": "generate"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "episode_id": "EP001",
+  "slug": "the-common-well",
+  "concept_name": "公地悲剧",
+  "domain": [
+    "经济学",
+    "社会学"
+  ],
+  "target_audience": "对知识感兴趣、但不希望先听抽象定义的普通短视频观众",
+  "target_duration_sec": 100,
+  "learning_goal": "让观众在概念揭晓前，先直觉理解个体的局部理性如何在共享资源中叠加为集体损失。",
+  "why_now": "作为栏目首期，它具备强画面、强现实映射和清晰的最后揭晓体验。",
+  "real_life_entry_points": [
+    "公共停车位被长期占用",
+    "共享茶水间物资被过量拿取",
+    "过度捕捞"
+  ],
+  "content_risk": {
+    "level": "low",
+    "notes": "避免把机制简化成村民贪婪；强调规则、激励和共享资源缺乏约束。"
+  },
+  "prompt_versions": {
+    "concept_analysis": "0.1.0",
+    "story_directions": "0.1.0",
+    "script": "0.1.0",
+    "storyboard": "0.1.0",
+    "image_package": "0.1.0",
+    "publish_package": "0.1.0"
+  },
+  "status": "in_production"
+}

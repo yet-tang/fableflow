@@ -1,0 +1,25 @@
+{
+  "episode_id": "EP001",
+  "working_title": "多打一桶水",
+  "selected_option_id": "O1",
+  "estimated_duration_sec": 100,
+  "sections": [
+    {"section_id": "SEC01", "role": "hook", "start_sec": 0, "end_sec": 5, "voiceover": "雾谷有一口从没见过井底的水井。可有一天，全村人却守着它渴了一整天。", "on_screen_text": "一口从未干过的井，为什么突然空了？"},
+    {"section_id": "SEC02", "role": "setup", "start_sec": 5, "end_sec": 22, "voiceover": "井在村子中央，谁都可以取水。过去，大家只装当天够喝的量。夜里，地下水慢慢补回来，第二天又刚好够用。", "on_screen_text": "人人可取，夜里缓慢恢复"},
+    {"section_id": "SEC03", "role": "setup", "start_sec": 22, "end_sec": 36, "voiceover": "一个清晨，阿远发现邻居多带了一只桶。他想到家里还有老人，万一明天来晚了呢？于是，他也多打了一桶。", "on_screen_text": "只是多打一桶"},
+    {"section_id": "SEC04", "role": "escalation", "start_sec": 36, "end_sec": 60, "voiceover": "第二天，更多人带来了大桶。有人说，自己不多拿，水也会被别人拿走。井水越来越浅，排队却越来越早。每个人只多拿一点，谁都觉得问题不在自己。", "on_screen_text": "少拿的人，反而怕吃亏"},
+    {"section_id": "SEC05", "role": "guess", "start_sec": 60, "end_sec": 74, "voiceover": "直到一个清晨，木桶落下去，只传来撞击井底的空响。你觉得，究竟是谁弄干了这口井？", "on_screen_text": "是谁弄干了井？"},
+    {"section_id": "SEC06", "role": "reveal", "start_sec": 74, "end_sec": 84, "voiceover": "没有一个人单独毁掉它。这个故事讲的，是公地悲剧。", "on_screen_text": "公地悲剧"},
+    {"section_id": "SEC07", "role": "explanation", "start_sec": 84, "end_sec": 95, "voiceover": "水井是共享资源。多打一桶的好处归自己，水位下降的代价却由全村分担。当每个人都做同样合理的选择，资源就会被共同耗尽。", "on_screen_text": "私人收益，共同成本"},
+    {"section_id": "SEC08", "role": "ending", "start_sec": 95, "end_sec": 100, "voiceover": "所以下次看到人人都想多拿一点时，别只问谁自私，也要问规则把代价留给了谁。", "on_screen_text": "规则把代价留给了谁？"}
+  ],
+  "full_voiceover": "雾谷有一口从没见过井底的水井。可有一天，全村人却守着它渴了一整天。井在村子中央，谁都可以取水。过去，大家只装当天够喝的量。夜里，地下水慢慢补回来，第二天又刚好够用。一个清晨，阿远发现邻居多带了一只桶。他想到家里还有老人，万一明天来晚了呢？于是，他也多打了一桶。第二天，更多人带来了大桶。有人说，自己不多拿，水也会被别人拿走。井水越来越浅，排队却越来越早。每个人只多拿一点，谁都觉得问题不在自己。直到一个清晨，木桶落下去，只传来撞击井底的空响。你觉得，究竟是谁弄干了这口井？没有一个人单独毁掉它。这个故事讲的，是公地悲剧。水井是共享资源。多打一桶的好处归自己，水位下降的代价却由全村分担。当每个人都做同样合理的选择，资源就会被共同耗尽。所以下次看到人人都想多拿一点时，别只问谁自私，也要问规则把代价留给了谁。",
+  "reveal_first_character_index": 255,
+  "self_check": {
+    "mechanism_visible_before_reveal": true,
+    "no_early_term_leak": true,
+    "oral_readability": true,
+    "system_not_villainized": true,
+    "notes": ["揭晓位于约 74% 时长处。", "结尾将判断重点从道德责备转向激励与成本分配。"]
+  }
+}
