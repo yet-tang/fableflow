@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fableflow.local/schemas/decision.schema.json",
+  "title": "FableFlow Human Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["episode_id", "selected_option_id", "decision", "required_changes", "reviewer", "reviewed_at"],
+  "properties": {
+    "episode_id": {"type": "string", "pattern": "^EP[0-9]{3,}$"},
+    "selected_option_id": {"type": "string", "pattern": "^O[1-3]$"},
+    "decision": {"enum": ["approved", "approved_with_changes", "rejected"]},
+    "required_changes": {"type": "array", "items": {"type": "string"}},
+    "reviewer": {"type": "string", "minLength": 1},
+    "reviewed_at": {"type": "string", "format": "date-time"}
+  }
+}

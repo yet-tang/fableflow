@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fableflow.local/schemas/script.schema.json",
+  "title": "FableFlow Script",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "episode_id", "working_title", "selected_option_id", "estimated_duration_sec",
+    "sections", "full_voiceover", "reveal_first_character_index", "self_check"
+  ],
+  "properties": {
+    "episode_id": {"type": "string", "pattern": "^EP[0-9]{3,}$"},
+    "working_title": {"type": "string"},
+    "selected_option_id": {"type": "string", "pattern": "^O[1-3]$"},
+    "estimated_duration_sec": {"type": "integer", "minimum": 45, "maximum": 180},
+    "sections": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["section_id", "role", "start_sec", "end_sec", "voiceover", "on_screen_text"],
+        "properties": {
+          "section_id": {"type": "string"},
+          "role": {"enum": ["hook", "setup", "escalation", "guess", "reveal", "explanation", "ending"]},
+          "start_sec": {"type": "number", "minimum": 0},
+          "end_sec": {"type": "number", "exclusiveMinimum": 0},
+          "voiceover": {"type": "string"},
+          "on_screen_text": {"type": "string"}
+        }
+      }
+    },
+    "full_voiceover": {"type": "string", "minLength": 100},
+    "reveal_first_character_index": {"type": "integer", "minimum": 1},
+    "self_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism_visible_before_reveal", "no_early_term_leak", "oral_readability", "system_not_villainized", "notes"],
+      "properties": {
+        "mechanism_visible_before_reveal": {"type": "boolean"},
+        "no_early_term_leak": {"type": "boolean"},
+        "oral_readability": {"type": "boolean"},
+        "system_not_villainized": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

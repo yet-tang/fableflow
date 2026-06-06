@@ -1,0 +1,26 @@
+{
+  "episode_id": "EP000",
+  "slug": "concept-slug",
+  "concept_name": "待填写概念",
+  "domain": [
+    "待填写领域"
+  ],
+  "target_audience": "对知识感兴趣的普通短视频观众",
+  "target_duration_sec": 90,
+  "learning_goal": "让观众在概念揭晓前，通过故事中的选择、反馈和结果先建立直觉理解。",
+  "why_now": "说明该概念为什么值得在当前选题阶段制作。",
+  "real_life_entry_points": [],
+  "content_risk": {
+    "level": "low",
+    "notes": "待人工评估。"
+  },
+  "prompt_versions": {
+    "concept_analysis": "0.1.0",
+    "story_directions": "0.1.0",
+    "script": "0.1.0",
+    "storyboard": "0.1.0",
+    "image_package": "0.1.0",
+    "publish_package": "0.1.0"
+  },
+  "status": "draft"
+}

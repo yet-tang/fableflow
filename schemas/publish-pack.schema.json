@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fableflow.local/schemas/publish-pack.schema.json",
+  "title": "FableFlow Publish Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "episode_id", "titles", "cover_options", "voiceover", "guess_question",
+    "pinned_comment", "post_copy", "hashtags", "ai_disclosure", "experiment_hypothesis"
+  ],
+  "properties": {
+    "episode_id": {"type": "string", "pattern": "^EP[0-9]{3,}$"},
+    "titles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["suspense", "cognitive", "real_world"],
+      "properties": {
+        "suspense": {"type": "string"},
+        "cognitive": {"type": "string"},
+        "real_world": {"type": "string"}
+      }
+    },
+    "cover_options": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "visual", "safe_area"],
+        "properties": {
+          "text": {"type": "string", "minLength": 4, "maxLength": 18},
+          "visual": {"type": "string"},
+          "safe_area": {"type": "string"}
+        }
+      }
+    },
+    "voiceover": {"type": "string", "minLength": 100},
+    "guess_question": {"type": "string"},
+    "pinned_comment": {"type": "string"},
+    "post_copy": {"type": "string"},
+    "hashtags": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+    "ai_disclosure": {"type": "string"},
+    "experiment_hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable", "prediction", "success_signal"],
+      "properties": {
+        "variable": {"type": "string"},
+        "prediction": {"type": "string"},
+        "success_signal": {"type": "string"}
+      }
+    }
+  }
+}

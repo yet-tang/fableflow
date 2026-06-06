@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fableflow.local/schemas/asset-manifest.schema.json",
+  "title": "FableFlow Asset Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["episode_id", "global_style_anchor", "global_negative_constraints", "assets"],
+  "properties": {
+    "episode_id": {"type": "string", "pattern": "^EP[0-9]{3,}$"},
+    "global_style_anchor": {"type": "string", "minLength": 20},
+    "global_negative_constraints": {"type": "string", "minLength": 20},
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id", "filename", "strategy", "shot_ids", "priority", "references",
+          "generation_prompt", "negative_prompt", "review_checks", "regeneration_instruction", "status"
+        ],
+        "properties": {
+          "asset_id": {"type": "string", "pattern": "^A[0-9]{2}$"},
+          "filename": {"type": "string"},
+          "strategy": {"enum": ["generate", "reuse", "title_card"]},
+          "shot_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^S[0-9]{2}$"}},
+          "priority": {"enum": ["high", "medium", "low"]},
+          "references": {"type": "array", "items": {"type": "string"}},
+          "generation_prompt": {"type": "string"},
+          "negative_prompt": {"type": "string"},
+          "review_checks": {"type": "array", "items": {"type": "string"}},
+          "regeneration_instruction": {"type": "string"},
+          "status": {"enum": ["planned", "generated", "approved", "regenerate", "not_applicable"]}
+        }
+      }
+    }
+  }
+}
